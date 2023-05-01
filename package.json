@@ -2,10 +2,10 @@
   "name": "proyecto-mi-pagina-web",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/api/indexAPI.js",
+  "main": "./api/indexAPI.js",
   "scripts": {
-    "dev": "nodemon /src/api/indexAPI.js",
-    "start": "node /src/api/indexAPI.js",
+    "dev": "nodemon /api/indexAPI.js",
+    "start": "node /api/indexAPI.js",
     "lint": "eslint"
   },
   "keywords": [
