@@ -2,11 +2,10 @@
   "name": "proyecto-mi-pagina-web",
   "version": "1.0.0",
   "description": "",
-  "main": "indexAPI.js",
+  "main": "./src/api/indexAPI.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js",
-    "start": "nodemon index.js",
+    "dev": "nodemon /src/api/indexAPI.js",
+    "start": "node /src/api/indexAPI.js",
     "lint": "eslint"
   },
   "keywords": [

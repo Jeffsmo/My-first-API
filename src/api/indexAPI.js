@@ -1,7 +1,7 @@
 const express = require('express');
-const routerApi = require('./src/api/routerAPI');
+const routerApi = require('./routes/routerAPI');
 const cors = require('cors');
-const {logErrors, errorHandler, boomErrorHandler} = require('./src/httpErrors/errorHandler');
+const {logErrors, errorHandler, boomErrorHandler} = require('./httpErrors/errorHandler');
 
 
 const app = express();
@@ -19,11 +19,11 @@ const options = {
 }
 app.use(cors(options));
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hola mi server en express');
 });
 
-app.get('/nueva-ruta', (req, res) => {
+app.get('/api/nueva-ruta', (req, res) => {
   res.send('Hola, soy una nueva ruta');
 });
 
