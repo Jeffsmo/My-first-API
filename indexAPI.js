@@ -5,7 +5,7 @@ const {logErrors, errorHandler, boomErrorHandler} = require('./src/httpErrors/er
 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json()); //Estos tambien son Middlewares...
 //app.use(cors()); ----->>> ESTO DA ACCESO A TODOS LOS ORIGENES, CUIDADO!!...
@@ -13,7 +13,7 @@ app.use(express.json()); //Estos tambien son Middlewares...
 const whitelist= ['http://localhost:8080'];
 const options = {
   origin: (origin, callback) => {
-    if(whitelist.includes(origin)){callback(null, true)}
+    if(whitelist.includes(origin) || !origin){callback(null, true)}
     else{callback(new Error('Access not allowed'))}
   }
 }
@@ -28,7 +28,6 @@ app.get('/nueva-ruta', (req, res) => {
 });
 
 routerApi(app);
-
 
 //EL orden en que coloquemos los middlewares van a ser
 //el orden en que se estén ejecutando...
